@@ -57,7 +57,7 @@ public class HangzhouAsianGame {
 	List searchEvent(String event) {
 		List resultList = null;
 		outter : for ( int i = 0 ; i < eventList.size() ; i++ ) {
-			Map map = (Map)eventList.get(i);
+			Map map = (Map)eventList.get(i);                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
 			Set set = map.keySet();
 			Iterator ite = set.iterator();
 			while ( ite.hasNext() ) {
