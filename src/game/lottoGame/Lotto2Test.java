@@ -1,6 +1,6 @@
-package game.lotto;
+package game.lottoGame;
 
-public class Test {
+public class Lotto2Test {
 
 	public static void main(String[] args) {
 		Lotto lotto = new Lotto();
