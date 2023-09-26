@@ -1,14 +1,14 @@
-package game.lotto;
+package game.lottoGame;
 
 import java.util.Scanner;
 
-public class Lotto {
+public class Lotto2 {
 	
 	int[] lotto = new int[6];
 	int[] guest = new int[6];
 	int count;
 	
-	public Lotto() {
+	public Lotto2() {
 		int number = 0;
 		for ( int i = 0 ; i < 6 ; i++ ) {
 			number = (int)(Math.random()*45)+1;
