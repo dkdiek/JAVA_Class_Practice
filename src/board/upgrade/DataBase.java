@@ -11,46 +11,23 @@ public class DataBase {
 	private List list = new ArrayList();
 
 	void showList() {
-		if ( 0 == list.size() ) {
+		if (0 == list.size()) {
 			System.out.println("!!! 게시물이 없습니다 !!!");
 		}
-		System.out.println("----------------------------");
 
-		for( int i = 0 ; i<list.size() ; i++ ) {
+		for (int i = 0; i < list.size(); i++) {
 			Board board = (Board) list.get(i);
-			
-			System.out.println(board.getNo()
-				+ " | " + board.getTitle()
-				+ " | " + board.getWriter()
-				+ " | " + board.getDate() );
+
+			System.out.println(
+					board.getNo()
+					+ " | " + board.getTitle()
+					+ " | " + board.getWriter()
+					+ " | " + board.getDate());
+			System.out.println("----------------------------");
 		}
 
-		System.out.println("----------------------------");
-		
 	}
-	
-	void showList(int articleNo) {
-		if ( 0 == list.size() ) {
-			System.out.println("!!! 게시물이 없습니다 !!!");
-		}
-		System.out.println("----------------------------");
-		
-		for( int i = 0 ; i<list.size() ; i++ ) {
-			Board board = (Board) list.get(i);
-			
-			if(articleNo == i) {
-				System.out.println("번호 :" + board.getNo());
-				System.out.println("작성일시 :" + board.getDate());
-				System.out.println("작성자 :" + board.getWriter());
-				System.out.println("제목 :" + board.getTitle());
-				System.out.println("내용 :" + board.getContent());
-			}
-		}
 
-		System.out.println("----------------------------");
-		
-	}
-	
 	void writeBoard() {
 
 		Board board = new Board();
@@ -75,6 +52,29 @@ public class DataBase {
 		LocalDateTime dateTime = LocalDateTime.now();
 		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy.MM.dd HH:mm");
 		return dateTime.format(formatter);
+	}
+
+	public void showContent(int bNumber) {
+
+		for (int i = 0; i < list.size(); i++) {
+			Board board = (Board) list.get(i);
+
+			if (board.getNo() == bNumber) {
+
+				System.out.println("----------------------------");
+				System.out.println("번호 : " + board.getNo());
+				System.out.println("제목 : " + board.getTitle());
+				System.out.println("내용 : " + board.getContent());
+				System.out.println("작성자 : " + board.getWriter());
+				System.out.println("작성일시 : " + board.getDate());
+				System.out.println("----------------------------");
+				break;
+			}
+		}
+	}
+
+	int getListSize() {
+		return this.list.size();
 	}
 
 }
