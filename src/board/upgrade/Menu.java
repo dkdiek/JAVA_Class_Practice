@@ -19,16 +19,16 @@ public class Menu {
 
 			if (1 == choice) {
 				db.showList();
-				System.out.println("1. 게시글 상세 보기");				
+				System.out.println("1. 게시글 상세 보기");
 				System.out.println("2. 메뉴 돌아가기");
 				System.out.println(">메뉴를 선택하시오.");
-				int detailView = sc.nextInt();
 				
-				if(1 == detailView) {
+				int detailView = sc.nextInt();
+				if (1 == detailView) {
 					System.out.println(">조회할 게시글 번호를 입력하시오.");
 					int articleNo = sc.nextInt();
 					db.showList(articleNo - 1);
-				}else if(2 == detailView) {
+				} else if (2 == detailView) {
 					continue;
 				}
 			}
