@@ -7,24 +7,25 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-public class HangzhouAsianGame {
+public class HangzhouAsianGame2 {
 	
 	List eventList;
 	
-	public HangzhouAsianGame() {
+	public HangzhouAsianGame2() {
 		eventList = new ArrayList();
 	}
 	
 	void setESports() {
 		List list = new ArrayList();
 		
-		Map map = new HashMap();
-		map.put("date", "9월 24일 (일)");
-		map.put("time", "10:00");
-		map.put("title", "FIFA 온라인");
-		list.add(map);
+		Schedule sch = new Schedule();
+		sch.setDate("9월 24일 (일)");
+		sch.setTime("10:00");
+		sch.setTitle("FIFA 온라인");
+		list.add(sch);
+
 		
-		map = new HashMap();
+		Map map = new HashMap();
 		map.put("date", "9월 26일 (화)");
 		map.put("time", "10:00");
 		map.put("title", "롤");
