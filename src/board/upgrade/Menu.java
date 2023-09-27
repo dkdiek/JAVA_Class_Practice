@@ -1,5 +1,7 @@
 package board.upgrade;
-
+/*
+ * 삭제, 수정 추가
+ */
 import java.util.Scanner;
 
 public class Menu {
