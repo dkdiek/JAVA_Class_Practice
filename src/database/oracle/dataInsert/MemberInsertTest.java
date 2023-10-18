@@ -18,6 +18,10 @@ public class MemberInsertTest {
 			Class.forName("oracle.jdbc.OracleDriver");
 
 			conn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521/orcl", "newuser", "1234");
+			
+			conn.setAutoCommit(false);
+			
+			
 			String sql ="" 
 						+ "INSERT INTO member ( ID,PW,NAME,AGE,GENDER,PHONE)"
 						+ "values (?, ?, ?, ?, ?, ?)";
@@ -42,7 +46,14 @@ public class MemberInsertTest {
 			if(0 == rows) {
 				System.out.println("실패");
 			} else {
-				System.out.println("회원 정보 입력 성공 : " + rows);
+				if (1 < rows) {
+					conn.rollback();
+					System.out.println("롤백 : " + rows);
+					
+				}else{
+					conn.commit();
+					System.out.println("회원 정보 입력 성공 : " + rows);
+				}
 			}
 			
 			pstmt.close();

@@ -24,7 +24,7 @@ public class MemberSelectTest {
 					+ "        ,PW"
 					+ "        ,NAME"
 					+ "        ,AGE"
-					+ "        ,GENDER"
+					+ "        ,NVL(GENDER,' ') AS GENDER" // 빈문자열일때 공백 1개를 출력
 					+ "        ,PHONE"
 					+ "        ,CREATE_DATE"
 					+ " FROM MEMBER";
@@ -34,14 +34,14 @@ public class MemberSelectTest {
 			ResultSet rs = pstmt.executeQuery();
 			
 			while ( rs.next() ) {
-				System.out.print(rs.getString("SEQ") + " | ");
-				System.out.print(rs.getString("ID") + " | ");
-				System.out.print(rs.getString("PW") + " | ");
-				System.out.print(rs.getString("NAME") + " | ");
-				System.out.print(rs.getString("AGE") + " | ");
-				System.out.print(rs.getString("GENDER") + " | ");
-				System.out.print(rs.getString("PHONE") + " | ");
-				System.out.print(rs.getString("CREATE_DATE"));
+				System.out.print(rs.getString(1) + " | ");
+				System.out.print(rs.getString(2) + " | ");
+				System.out.print(rs.getString(3) + " | ");
+				System.out.print(rs.getString(4) + " | ");
+				System.out.print(rs.getString(5) + " | ");
+				System.out.print(rs.getString(6) + " | ");
+				System.out.print(rs.getString(7) + " | ");
+				System.out.print(rs.getString(8));
 				System.out.println();
 			}
 			rs.close();
